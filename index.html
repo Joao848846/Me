@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Futuristic Developer Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://esm.sh/swiper@11/swiper.min.css" />
+  <link rel="stylesheet" href="https://esm.sh/swiper@11/modules/navigation.min.css" />
+  <link rel="stylesheet" href="https://esm.sh/swiper@11/modules/pagination.min.css" />
+  <style>
+    /* Custom Keyframes and Animations from HeroSection */
+    @keyframes pulse-slow {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.05); }
+    }
+    @keyframes pulse-slower {
+      0%, 100% { opacity: 0.4; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.03); }
+    }
+    @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+    .animate-pulse-slow {
+      animation: pulse-slow 5s infinite ease-in-out;
+    }
+    .animate-pulse-slower {
+      animation: pulse-slower 7s infinite ease-in-out;
+    }
+    .animate-spin-slow {
+        animation: spin 10s linear infinite;
+    }
+
+    /* Custom Scrollbar from ProjectCard */
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 5px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: rgba(45, 55, 72, 0.5); /* slate-700 with opacity */
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #22d3ee; /* cyan-400 */
+        border-radius: 3px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #06b6d4; /* cyan-500 */
+    }
+
+    /* Ensure body/html take full height for sticky footer and backgrounds */
+    html, body, #root {
+      height: 100%;
+      background-color: #020617; /* Equivalent to bg-slate-950 for consistent base */
+    }
+    body {
+      color: #cbd5e1; /* Equivalent to text-slate-300 for default text */
+    }
+
+    /* Custom Swiper Pagination Styles */
+    .swiper-pagination-bullet {
+      background-color: #475569; /* slate-600 */
+      opacity: 0.7;
+      transition: background-color 0.3s, opacity 0.3s;
+      width: 10px;
+      height: 10px;
+    }
+    .swiper-pagination-bullet-active {
+      background-color: #22d3ee; /* cyan-400 */
+      opacity: 1;
+      width: 12px;
+      height: 12px;
+    }
+
+    /* New "More Life" Animations */
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    .animate-shimmer {
+      background-size: 200% auto;
+      animation: shimmer 3s linear infinite;
+    }
+
+    @keyframes pulse-text-cyan { 0%, 100% { color: #06b6d4; opacity: 1; } 50% { color: #22d3ee; opacity: 0.85; } } /* cyan-500, cyan-400 */
+    .animate-pulse-text-cyan { animation: pulse-text-cyan 2s infinite ease-in-out; }
+    
+    @keyframes pulse-text-purple { 0%, 100% { color: #a855f7; opacity: 1; } 50% { color: #c084fc; opacity: 0.85; } } /* purple-500, purple-400 */
+    .animate-pulse-text-purple { animation: pulse-text-purple 2.2s infinite ease-in-out; }
+    
+    @keyframes pulse-text-yellow { 0%, 100% { color: #eab308; opacity: 1; } 50% { color: #facc15; opacity: 0.85; } } /* yellow-500, yellow-400 */
+    .animate-pulse-text-yellow { animation: pulse-text-yellow 2.4s infinite ease-in-out; }
+
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@19.0.0",
+    "react-dom": "https://esm.sh/react-dom@19.0.0",
+    "react-dom/": "https://esm.sh/react-dom@19.0.0/",
+    "react/": "https://esm.sh/react@19.0.0/",
+    "@/components/Icons": "./components/Icons.tsx",
+    "swiper/react": "https://esm.sh/swiper@11/react?external=react",
+    "swiper/modules": "https://esm.sh/swiper@11/modules?external=react",
+    "swiper/": "https://esm.sh/swiper@^11.2.8/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root" class="flex flex-col min-h-screen"></div>
+  <div id="modal-root"></div> <!-- Added modal root for portals -->
+  <!--
+    This HTML file is a template.
+    If you open it directly in the browser, you will see an empty page.
+
+    You can add webfonts, meta tags, or analytics to this file.
+    The build step will place the bundled scripts into the <body> tag.
+
+    To begin the development, run `npm start` or `yarn start`.
+    To create a production bundle, use `npm run build` or `yarn build`.
+  -->
+  <script type="module" src="./index.tsx"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
